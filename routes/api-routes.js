@@ -49,3 +49,16 @@ router.post("/api/workouts", ({body}, res) => {
         res.json(err)
     });
 });
+
+// GET getWorkoutsInRange()
+router.get("/api/workouts/range", (req, res) => {
+    Workout.find({})
+    .then(workout => {
+        res.json(workout);
+    })
+    .catch(err => {
+        res.json(err)
+    });
+});
+
+module.exports = router;
